@@ -49,10 +49,10 @@ const patchProduct = (req, res) =>{
         .then((response) => {
             if(response[0]){
                 res.status(200).json({
-                    message: `El producto con el id ${id} ha sido modificado`
+                    message: `Product with ID ${id} has been modified`
                 })
             }else {
-                res.status(404).json({message: 'Id invalido'})
+                res.status(404).json({message: 'Id invalid'})
             }
         })
         .catch((err) => {
@@ -68,9 +68,9 @@ const putProduct = (req, res) => {
         productsControllers.editProduct(id, {name, category, price, isAvailable})
         .then(response =>{
             if(response[0]){
-                res.status(200).json({message: `Producto con ID ${id} ha diso editado`})
+                res.status(200).json({message: `Product with ID ${id} has been modified`})
             }else {
-                res.status(400).json({message: 'Id invalido'})
+                res.status(400).json({message: 'Id invalid'})
             }
         })
         .catch(err => {
@@ -93,7 +93,7 @@ const deleteProduct = (req, res) => {
             if(response) {
                 res.status(204).json()
             }else {
-                res.status(400).json({message: 'Id invalido'})
+                res.status(400).json({message: 'Id invalid'})
             }
         })
         .catch( err => {
